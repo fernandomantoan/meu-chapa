@@ -1,21 +1,15 @@
 import React from "react";
-import { StyleSheet, View, Text, Image } from "react-native";
-import { Toolbar, Avatar, COLOR } from "react-native-material-ui";
+import { StyleSheet, View } from "react-native";
+import { Avatar } from 'react-native-paper';
 import Photo from "../../../assets/Avatar.png";
 
 const Home = () => {
     return (
         <View style={styles.container}>
-            <Toolbar
-                key="toolbar"
-                leftElement=""
-                centerElement=""
-            />
+            {
             <View style={styles.extendedToolbar}>
-                <Avatar image={(
-                    <Image source={Photo} />
-                )} />
-            </View>
+                <Avatar.Image size={24} source={Photo} />
+            </View>}
         </View>
     );
 };
@@ -25,7 +19,7 @@ const styles = StyleSheet.create({
         flex: 1
     },
     extendedToolbar: {
-        backgroundColor: COLOR.blue500,
+        backgroundColor: "#2196F3",
         height: 200,
         alignItems: "center"
     },
