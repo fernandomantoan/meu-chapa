@@ -24,10 +24,10 @@ const Routes = () => {
                     },
                 }}
             >
+                <AppStack.Screen name="Home" component={Home} />
                 <AppStack.Screen name="Freight" component={Freight} />
                 <AppStack.Screen name="Health" component={Health} />
                 <AppStack.Screen name="HealthVideos" component={HealthVideos} />
-                <AppStack.Screen name="Home" component={Home} />
                 <AppStack.Screen name="Phones" component={Phones} />
                 <AppStack.Screen name="PointDetail" component={PointDetail} />
                 <AppStack.Screen name="PointsMap" component={PointsMap} />
