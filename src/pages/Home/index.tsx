@@ -7,9 +7,9 @@ const Home = () => {
     return (
         <View style={styles.container}>
             {
-            <View style={styles.extendedToolbar}>
-                <Avatar.Image size={24} source={Photo} />
-            </View>}
+                <View style={styles.extendedToolbar}>
+                    <Avatar.Image size={120} source={Photo} />
+                </View>}
         </View>
     );
 };
@@ -21,7 +21,8 @@ const styles = StyleSheet.create({
     extendedToolbar: {
         backgroundColor: "#2196F3",
         height: 200,
-        alignItems: "center"
+        alignItems: "center",
+        paddingTop: 10
     },
     avatar: {
         width: 102,
