@@ -1,4 +1,4 @@
-import { InterestPoint } from "./entities/Entities";
+import { InterestPoint, Reward } from "./entities/Entities";
 
 export const points = [{
     id: 1,
@@ -19,3 +19,29 @@ export const points = [{
     longitude: -47.03732781352653,
     type: 'health'
 }] as InterestPoint[];
+
+export const rewards = [{
+    id: 1,
+    name: 'Kit Higiene COVID-19',
+    description: 'Composto por Alquingél 200 ml, sabonete e 2 Máscaras',
+    points: 500,
+    image: 'HigieneCovid.png'
+}, {
+    id: 2,
+    name: 'Troca de Óleo',
+    description: 'Troca de óleo (até 100 litros) com SW-300',
+    points: 1000,
+    image: 'Oleo.png'
+}, {
+    id: 3,
+    name: 'Vale Almoço Completo',
+    description: 'Almoço + Refrigerante + Sobremesa',
+    points: 750,
+    image: 'Almoco.png'
+}, {
+    id: 4,
+    name: 'Vale Abastecimento',
+    description: '100 litros de diesel',
+    points: 3000,
+    image: 'Combustivel.png'
+}] as Reward[];
