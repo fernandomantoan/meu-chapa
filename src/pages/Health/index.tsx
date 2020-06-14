@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MaterialIcons } from '@expo/vector-icons';
 import { View, Text } from "react-native";
-import { Card, Button, List, Appbar } from 'react-native-paper';
-import { useTheme } from 'react-native-paper';
+import { Card, Button, List, Appbar, useTheme } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 
 import styles from './styles';
