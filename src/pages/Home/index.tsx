@@ -27,7 +27,7 @@ const Home = () => {
     }
 
     function handleNavigateToPhones() {
-        navigation.navigate('Freight');
+        navigation.navigate('Phones');
     }
 
     function handleNavigateToRewards() {
