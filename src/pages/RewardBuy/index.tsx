@@ -16,6 +16,7 @@ const RewardBuy = () => {
     const route = useRoute();
     const routeParams = route.params as Params;
     const { colors } = useTheme();
+    const pointBalance = 2500;
 
     useEffect(() => {
         const id = routeParams.reward_id;
@@ -43,16 +44,16 @@ const RewardBuy = () => {
                         <Divider />
                         <View style={styles.pointsContainer}>
                             <Text>Saldo de Pontos</Text>
-                            <Text>2500</Text>
+                            <Text>{pointBalance}</Text>
                         </View>
                         <View style={styles.pointsContainer}>
                             <Text>Preço do Produto</Text>
-                            <Text>750</Text>
+                            <Text>{reward.points}</Text>
                         </View>
                         <Divider />
                         <View style={styles.pointsContainer}>
                             <Text>Saldo Final</Text>
-                            <Text>1750</Text>
+                            <Text>{pointBalance - reward.points}</Text>
                         </View>
                     </Card.Content>
                     <Card.Actions style={styles.actionsContainer}>

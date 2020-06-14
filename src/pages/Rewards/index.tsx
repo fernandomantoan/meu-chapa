@@ -42,7 +42,8 @@ const Rewards = () => {
                                     <Text style={styles.rewardDescription}>{reward.description}</Text>
                                 </Card.Content>
                                 <View style={styles.cardActions}>
-                                    <Button 
+                                    <Button
+                                        dark={true}
                                         mode="contained"
                                         dark={true}
                                         color={colors.accent}
