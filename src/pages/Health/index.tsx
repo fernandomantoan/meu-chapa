@@ -1,8 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MaterialIcons } from '@expo/vector-icons';
 import { View, Text } from "react-native";
-import { Card, Button, List, Appbar, Divider } from 'react-native-paper';
-import { useTheme } from 'react-native-paper';
+import { Card, Button, List, Appbar, Divider, useTheme } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 
 import styles from './styles';
@@ -89,15 +88,14 @@ const Health = () => {
                 <List.Section>
                     <List.Subheader>Atividades recentes</List.Subheader>
                     {activities.map((activity => (
-                        <>
+                        <View key={activity.name}>
                             <List.Item
-                                key={activity.name}
                                 title={activity.name}
                                 description={activity.date.toLocaleString()}
                                 right={() => <Text style={styles.listItemPoints}>{activity.points} Chapa Pontos</Text>}
                             />
                             <Divider />
-                        </>
+                        </View>
                     )))}
                 </List.Section>
             </View>
