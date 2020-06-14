@@ -25,23 +25,23 @@ export const rewards = [{
     name: 'Kit Higiene COVID-19',
     description: 'Composto por Alquingél 200 ml, sabonete e 2 Máscaras',
     points: 500,
-    image: 'HigieneCovid.png'
+    image: require('../assets/HigieneCovid.png')
 }, {
     id: 2,
     name: 'Troca de Óleo',
     description: 'Troca de óleo (até 100 litros) com SW-300',
     points: 1000,
-    image: 'Oleo.png'
+    image: require('../assets/Oleo.png')
 }, {
     id: 3,
-    name: 'Vale Almoço Completo',
+    name: 'Vale Almoço',
     description: 'Almoço + Refrigerante + Sobremesa',
     points: 750,
-    image: 'Almoco.png'
+    image: require('../assets/Almoco.png')
 }, {
     id: 4,
     name: 'Vale Abastecimento',
     description: '100 litros de diesel',
     points: 3000,
-    image: 'Combustivel.png'
+    image: require('../assets/Combustivel.png')
 }] as Reward[];
