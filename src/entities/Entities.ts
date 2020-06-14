@@ -12,4 +12,10 @@ export interface Reward {
     description: string;
     points: number;
     image: NodeRequire;
-}
+};
+
+export interface Service {
+    id: number;
+    name: string;
+    icon: string;
+};

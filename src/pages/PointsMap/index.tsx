@@ -16,6 +16,10 @@ const PointsMap = () => {
         navigation.navigate("PointDetail", { point_id: id });
     }
 
+    function handleNavigateToAdd() {
+        navigation.navigate("PointForm");
+    }
+
     function getPlaceImage(type: string) {
         switch (type) {
             case 'restaurant':
@@ -32,6 +36,7 @@ const PointsMap = () => {
             <Appbar.Header>
                 <Appbar.BackAction onPress={() => { navigation.goBack() }} />
                 <Appbar.Content title="Pontos de Interesse" />
+                <Appbar.Action icon="plus" onPress={() => { handleNavigateToAdd() }} />
             </Appbar.Header>
             <MapView style={styles.map}
                 initialRegion={{
