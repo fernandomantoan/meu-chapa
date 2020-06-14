@@ -3,6 +3,7 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createStackNavigator } from "@react-navigation/stack";
 import Home from "./pages/Home";
 import Freight from "./pages/Freight";
+import FreightResult from "./pages/FreightResult";
 import Health from "./pages/Health";
 import HealthVideos from "./pages/HealthVideos";
 import Phones from "./pages/Phones";
@@ -26,6 +27,7 @@ const Routes = () => {
             >
                 <AppStack.Screen name="Home" component={Home} />
                 <AppStack.Screen name="Freight" component={Freight} />
+                <AppStack.Screen name="FreightResult" component={FreightResult} />
                 <AppStack.Screen name="Health" component={Health} />
                 <AppStack.Screen name="HealthVideos" component={HealthVideos} />
                 <AppStack.Screen name="Phones" component={Phones} />
