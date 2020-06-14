@@ -11,5 +11,5 @@ export interface Reward {
     name: string;
     description: string;
     points: number;
-    image: any;
+    image: NodeRequire;
 }

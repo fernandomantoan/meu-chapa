@@ -34,7 +34,7 @@ export const rewards = [{
     image: require('../assets/Oleo.png')
 }, {
     id: 3,
-    name: 'Vale Almoço Completo',
+    name: 'Vale Almoço',
     description: 'Almoço + Refrigerante + Sobremesa',
     points: 750,
     image: require('../assets/Almoco.png')
