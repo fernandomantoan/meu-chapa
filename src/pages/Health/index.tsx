@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { MaterialIcons } from '@expo/vector-icons';
 import { View, Text } from "react-native";
-import { Card, Button, List, Appbar, useTheme } from 'react-native-paper';
+import { Card, Button, List, Appbar, Divider, useTheme } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 
 import styles from './styles';
@@ -74,10 +74,10 @@ const Health = () => {
                                     <Text style={styles.progressTitle}>Meta</Text>
                                     <Text style={styles.progressGoalValue}>{challange.goal}</Text>
                                 </View>
-                                <Button icon="play" 
-                                        mode="contained"
-                                        color={colors.accent}
-                                        onPress={() => console.log('Pressed')}>
+                                <Button icon="play"
+                                    mode="contained"
+                                    color={colors.accent}
+                                    onPress={() => console.log('Pressed')}>
                                     INICIAR
                                 </Button>
                             </View>
@@ -88,12 +88,15 @@ const Health = () => {
                 <List.Section>
                     <List.Subheader>Atividades recentes</List.Subheader>
                     {activities.map((activity => (
-                        <List.Item
-                            key={activity.name}
-                            title={activity.name}
-                            description={activity.date.toLocaleString()}
-                            right={() => <Text style={styles.listItemPoints}>{activity.points} Chapa Pontos</Text>}
-                        />
+                        <>
+                            <List.Item
+                                key={activity.name}
+                                title={activity.name}
+                                description={activity.date.toLocaleString()}
+                                right={() => <Text style={styles.listItemPoints}>{activity.points} Chapa Pontos</Text>}
+                            />
+                            <Divider />
+                        </>
                     )))}
                 </List.Section>
             </View>
