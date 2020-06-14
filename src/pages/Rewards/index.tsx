@@ -44,6 +44,7 @@ const Rewards = () => {
                                 <View style={styles.cardActions}>
                                     <Button 
                                         mode="contained"
+                                        dark={true}
                                         color={colors.accent}
                                         onPress={() => { handleNavigateToDetail(reward.id) }}>COMPRAR</Button>
                                 </View>

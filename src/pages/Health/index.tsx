@@ -76,6 +76,7 @@ const Health = () => {
                                 </View>
                                 <Button icon="play"
                                     mode="contained"
+                                    dark={true}
                                     color={colors.accent}
                                     onPress={() => console.log('Pressed')}>
                                     INICIAR
