@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
-import { View, Text, SafeAreaView } from 'react-native';
+import { View, Text, SafeAreaView, Share } from 'react-native';
 import { ScrollView } from 'react-native-gesture-handler';
 import { Feather as Icon, FontAwesome5 } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
-import { Appbar, Button, Card, Divider } from "react-native-paper";
+import { Appbar, Button, Card } from "react-native-paper";
 import styles from './styles';
 
 const FreightResult = () => {
@@ -23,6 +23,16 @@ const FreightResult = () => {
     function calculateTruckage() {
         setTruckageValue("R$ 2.000,00");
     }
+
+    async function handleShare() {
+        try {
+            await Share.share({
+                message: '5600',
+            });
+        } catch (error) {
+          alert(error.message);
+        }
+      };
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
@@ -68,7 +78,7 @@ const FreightResult = () => {
                         </View>
                         <View style={styles.resultContainer}>
                             <Text style={styles.resultText}>R$ 3.600,00</Text>
-                            <Button>
+                            <Button onPress={() => handleShare()}>
                                 <FontAwesome5 name="whatsapp" style={{ color: "green" }} size={32}></FontAwesome5>
                             </Button>
                         </View>
