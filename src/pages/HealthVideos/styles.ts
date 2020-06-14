@@ -38,6 +38,9 @@ const styles = StyleSheet.create({
     },
     videoContainer: {
         marginTop: 20
+    },
+    boldText: {
+        fontWeight: 'bold'
     }
 });
 

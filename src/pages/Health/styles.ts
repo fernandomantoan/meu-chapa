@@ -74,6 +74,9 @@ const styles = StyleSheet.create({
         marginTop: 18,
         fontSize: 12,
         color: '#3F8D2D',
+    },
+    boldText: {
+        fontWeight: 'bold'
     }
 });
 

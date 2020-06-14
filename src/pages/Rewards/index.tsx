@@ -23,7 +23,7 @@ const Rewards = () => {
             </Appbar.Header>
             <ScrollView>
                 <View style={styles.container}>
-                    <Text style={styles.title}>Antônio, você possui 2500 Chapa Pontos</Text>
+                    <Text style={styles.title}>Antônio, você possui <Text style={styles.boldText}>500 Chapa Pontos</Text></Text>
                     <TextInput
                         mode="outlined"
                         label='Buscar'

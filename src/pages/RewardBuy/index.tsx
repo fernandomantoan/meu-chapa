@@ -5,6 +5,7 @@ import { View, Text } from 'react-native';
 import { Reward } from "../../entities/Entities";
 import styles from './styles';
 import { rewards } from '../../storage';
+import { ScrollView } from 'react-native-gesture-handler';
 
 interface Params {
     reward_id: number;
@@ -34,33 +35,35 @@ const RewardBuy = () => {
                 <Appbar.BackAction onPress={() => { handleNavigateBack() }} />
                 <Appbar.Content title="Confirmação de Compra" />
             </Appbar.Header>
-            <View style={styles.container}>
-                <Text style={styles.title}>Você está comprando</Text>
-                <Card>
-                    <Card.Cover source={reward.image} />
-                    <Card.Content>
-                        <Title>{reward.name}</Title>
-                        <Paragraph style={styles.paragraph}>{reward.description}</Paragraph>
-                        <Divider />
-                        <View style={styles.pointsContainer}>
-                            <Text>Saldo de Pontos</Text>
-                            <Text>{pointBalance}</Text>
-                        </View>
-                        <View style={styles.pointsContainer}>
-                            <Text>Preço do Produto</Text>
-                            <Text>{reward.points}</Text>
-                        </View>
-                        <Divider />
-                        <View style={styles.pointsContainer}>
-                            <Text>Saldo Final</Text>
-                            <Text>{pointBalance - reward.points}</Text>
-                        </View>
-                    </Card.Content>
-                    <Card.Actions style={styles.actionsContainer}>
-                        <Button color={colors.accent} mode="contained" dark={true} onPress={() => { console.log("Compra!") }}>COMPRAR</Button>
-                    </Card.Actions>
-                </Card>
-            </View>
+            <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.title}>Você está comprando</Text>
+                    <Card>
+                        <Card.Cover source={reward.image} />
+                        <Card.Content>
+                            <Title>{reward.name}</Title>
+                            <Paragraph style={styles.paragraph}>{reward.description}</Paragraph>
+                            <Divider />
+                            <View style={styles.pointsContainer}>
+                                <Text>Saldo de Pontos</Text>
+                                <Text>{pointBalance}</Text>
+                            </View>
+                            <View style={styles.pointsContainer}>
+                                <Text>Preço do Produto</Text>
+                                <Text>{reward.points}</Text>
+                            </View>
+                            <Divider />
+                            <View style={styles.pointsContainer}>
+                                <Text>Saldo Final</Text>
+                                <Text>{pointBalance - reward.points}</Text>
+                            </View>
+                        </Card.Content>
+                        <Card.Actions style={styles.actionsContainer}>
+                            <Button color={colors.accent} mode="contained" dark={true} onPress={() => { console.log("Compra!") }}>COMPRAR</Button>
+                        </Card.Actions>
+                    </Card>
+                </View>
+            </ScrollView>
         </>
     );
 };

@@ -4,7 +4,7 @@ import { Avatar } from 'react-native-paper';
 import { MaterialIcons } from '@expo/vector-icons';
 import Photo from "../../../assets/Avatar.png";
 import { useNavigation } from "@react-navigation/native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { TouchableOpacity, ScrollView } from "react-native-gesture-handler";
 
 import styles from './styles'
 
@@ -44,7 +44,9 @@ const Home = () => {
                     <Text style={styles.username}>Antônio José da Silva</Text>
                     <Text style={styles.points}>500 Chapa Pontos</Text>
                 </View>
+            </View>
 
+            <ScrollView>
                 <View style={styles.content}>
                     <TouchableOpacity 
                         style={styles.buttonContainer}
@@ -95,7 +97,7 @@ const Home = () => {
                                 </View>
                     </TouchableOpacity>
                 </View>
-            </View>
+            </ScrollView>
         </>
     );
 };
