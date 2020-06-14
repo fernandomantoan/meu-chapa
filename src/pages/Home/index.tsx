@@ -1,10 +1,12 @@
 import React from "react";
-import { StyleSheet, View, Text } from "react-native";
-import { Avatar, Button } from 'react-native-paper';
+import { View, Text } from "react-native";
+import { Avatar } from 'react-native-paper';
 import { MaterialIcons } from '@expo/vector-icons';
 import Photo from "../../../assets/Avatar.png";
 import { useNavigation } from "@react-navigation/native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+
+import styles from './styles'
 
 const Home = () => {
 
@@ -31,7 +33,7 @@ const Home = () => {
     }
 
     function handleNavigateToRewards() {
-        navigation.navigate('Freight');
+        navigation.navigate('Rewards');
     }
 
     return (
@@ -39,50 +41,63 @@ const Home = () => {
             <View style={styles.container}>
                 <View style={styles.extendedToolbar}>
                     <Avatar.Image size={120} source={Photo} />
+                    <Text style={styles.username}>Antônio José da Silva</Text>
+                    <Text style={styles.points}>500 Chapa Pontos</Text>
                 </View>
-                <TouchableOpacity onPress={() => handleNavigateToHealth()}>
-                    <MaterialIcons name="favorite" size={32} />
-                    <Text>Minha Saúde</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleNavigateToFreight()}>
-                    <MaterialIcons name="local-shipping" size={32} />
-                    <Text>Cálculo de Frete</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleNavigateToHealthVideos()}>
-                    <MaterialIcons name="local-movies" size={32} />
-                    <Text>Vídeos</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleNavigateToMaps()}>
-                    <MaterialIcons name="place" size={32} />
-                    <Text>Pontos de Interesse</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleNavigateToPhones()}>
-                    <MaterialIcons name="phone" size={32} />
-                    <Text>Telefones Úteis</Text>
-                </TouchableOpacity>
-                <TouchableOpacity onPress={() => handleNavigateToRewards()}>
-                    <MaterialIcons name="shopping-cart" size={32} />
-                    <Text>Recompensas</Text>
-                </TouchableOpacity>
+
+                <View style={styles.content}>
+                    <TouchableOpacity 
+                        style={styles.buttonContainer}
+                        onPress={() => handleNavigateToHealth()}>
+                                <View style={styles.buttonContent}>
+                                    <MaterialIcons name="favorite" color="#E05050" size={48} />
+                                    <Text style={styles.text}>Minha Saúde</Text>
+                                </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.buttonContainer}
+                        onPress={() => handleNavigateToFreight()}>
+                                <View style={styles.buttonContent}>
+                                    <MaterialIcons name="local-shipping" color="#745C5C" size={48} />
+                                    <Text style={styles.text}>Cálculo de Frete</Text>
+                                </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.buttonContainer}
+                        onPress={() => handleNavigateToHealthVideos()}>
+                                <View style={styles.buttonContent}>
+                                    <MaterialIcons name="local-movies" color="#575757" size={48} />
+                                    <Text style={styles.text}>Vídeos</Text>
+                                </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.buttonContainer}
+                        onPress={() => handleNavigateToMaps()}>
+                                <View style={styles.buttonContent}>
+                                    <MaterialIcons name="place" color="#3F8D2D" size={48} />
+                                    <Text style={styles.text}>Pontos de Interesse</Text>
+                                </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.buttonContainer}
+                        onPress={() => handleNavigateToPhones()}>
+                                <View style={styles.buttonContent}>
+                                    <MaterialIcons name="phone" color="#1976D2" size={48} />
+                                    <Text style={styles.text}>Telefones Úteis</Text>
+                                </View>
+                    </TouchableOpacity>
+                    <TouchableOpacity 
+                        style={styles.buttonContainer}
+                        onPress={() => handleNavigateToRewards()}>
+                                <View style={styles.buttonContent}>
+                                    <MaterialIcons name="shopping-cart" color="#FFC107" size={48} />
+                                    <Text style={styles.text}>Recompensas</Text>
+                                </View>
+                    </TouchableOpacity>
+                </View>
             </View>
         </>
     );
 };
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1
-    },
-    extendedToolbar: {
-        backgroundColor: "#2196F3",
-        height: 200,
-        alignItems: "center",
-        paddingTop: 10
-    },
-    avatar: {
-        width: 102,
-        height: 102
-    }
-});
 
 export default Home;
