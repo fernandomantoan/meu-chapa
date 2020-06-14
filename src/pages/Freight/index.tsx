@@ -104,7 +104,9 @@ const Freight = () => {
                             data={loadTypes}
                             value={selectedLoadType}
                             onChangeText={(value) => handleLoadTypeChange(value)} />
-                        <Text style={styles.formLabel}>Quantidade de Eixos ({selectedAxisQuantity} eixos)</Text>
+                        <Text style={styles.formLabel}>
+                            Quantidade de Eixos ({selectedAxisQuantity} eixos)
+                        </Text>
                         <View style={{ flexDirection: "row", alignItems: "center" }}>
                             <Text style={[styles.formLabel, { color: "green", width: "5%" }]}>2</Text>
                             <Slider style={{ width: "90%", marginTop: 16 }} minimumValue={2} maximumValue={9} step={1} onValueChange={(value) => handleAxisChange(String(value))} />

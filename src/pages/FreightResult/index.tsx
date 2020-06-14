@@ -32,14 +32,16 @@ const FreightResult = () => {
             </Appbar.Header>
             <ScrollView>
                 <View style={styles.container}>
-                    <Card style={{ marginTop: 16 }}>
-                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 8, marginLeft: 8 }}>
-                            <Text style={styles.cardText}>800 km</Text>
-                            <Text style={styles.cardText}>3 eixos</Text>
+                    <Card style={styles.cardContainer}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
+                            <Text style={styles.cardTitle}>Informações do Frete</Text>
                             <Button onPress={() => handleNavigationBack()}>
                                 <FontAwesome5 name="edit" size={16} />
                             </Button>
                         </View>
+                        <Text style={styles.cardText}>Distância: 800 km</Text>
+                        <Text style={styles.cardText}>Nº de eixos: 3</Text>
+                        
                         <View style={{ flexDirection: "row", marginTop: 16, marginHorizontal: 8, alignItems: "center" }}>
                             <FontAwesome5 style={styles.cardIcon} name="truck-loading" size={16}></FontAwesome5>
                             <Text style={styles.cardText}>Carga Granel Líquido</Text>
@@ -48,13 +50,30 @@ const FreightResult = () => {
                             <FontAwesome5 style={styles.cardIcon} name="truck" size={16}></FontAwesome5>
                             <Text style={styles.cardText}>Conjunto Completo</Text>
                         </View>
-                        <Divider style={{ marginVertical: 16 }} />
+                    </Card>
+                    <Card style={styles.cardContainer}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
+                            <Text style={styles.cardTitle}>Custos do Transporte</Text>
+                            <Button onPress={() => handleNavigationBack()}>
+                                <FontAwesome5 name="edit" size={16} />
+                            </Button>
+                        </View>
+                        <Text style={styles.cardText}>Preço do Combustível: R$3,60</Text>
+                        <Text style={styles.cardText}>Autonomia: 2km/litro</Text>
+                        <Text style={styles.cardText}>Total de Pedágio: R$120,00</Text>
+                    </Card>
+                    <Card style={styles.cardContainer}>
+                        <View style={{ flexDirection: "row", justifyContent: "space-between", alignItems: "center", marginTop: 8 }}>
+                            <Text style={styles.cardTitle}>Valor do Frete</Text>
+                        </View>
                         <View style={styles.resultContainer}>
-                            <Text style={styles.resultText}>R$ 1.600,00</Text>
+                            <Text style={styles.resultText}>R$ 3.600,00</Text>
                             <Button>
                                 <FontAwesome5 name="whatsapp" style={{ color: "green" }} size={32}></FontAwesome5>
                             </Button>
                         </View>
+                        <Text style={styles.cardRedText}>Custos: - R$1.560,00</Text>
+                        <Text style={styles.cardGreenText}>Lucro: R$2.040,00</Text>
                         <Text style={{ marginTop: 40, marginHorizontal: 8 }}>
                             Cálculo realizado de acordo com resolução ANTT nº 5.687/2020.
                         </Text>
