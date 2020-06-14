@@ -1,9 +1,7 @@
-import React, { useState, useEffect, Component } from 'react';
-import Constants from 'expo-constants';
-import { View, Text, StyleSheet, SafeAreaView, TouchableOpacity, Picker, Slider, ColorPropType } from 'react-native';
-import { RectButton } from 'react-native-gesture-handler';
-import { Feather as Icon } from "@expo/vector-icons";
-import { useNavigation, useRoute } from "@react-navigation/native";
+import React, { useState } from 'react';
+import { View, Text, SafeAreaView, Slider } from 'react-native';
+import { ScrollView } from 'react-native-gesture-handler';
+import { useNavigation } from "@react-navigation/native";
 import { Dropdown } from "react-native-material-dropdown";
 import { Appbar, TextInput, Button } from "react-native-paper";
 import styles from './styles';
@@ -89,34 +87,36 @@ const Freight = () => {
                 <Appbar.BackAction onPress={() => { handleNavigationBack() }} />
                 <Appbar.Content title="Cálculo de Frete" />
             </Appbar.Header>
-            <View style={styles.container}>
-                <View>
-                    <Dropdown
-                        label="Tipo do Frete"
-                        data={freigthTypes}
-                        onChangeText={(value) => handleFreightTypeChange(value)} />
-                    <Dropdown
-                        label="Tipo da Carga"
-                        data={loadTypes}
-                        onChangeText={(value) => handleLoadTypeChange(value)} />
-                    <Text style={styles.formLabel}>Quantidade de Eixos ({selectedAxisQuantity} eixos)</Text>
-                    <View style={{ flexDirection: "row", alignItems: "center" }}>
-                        <Text style={[styles.formLabel, { color: "green", width: "5%" }]}>2</Text>
-                        <Slider style={{ width: "90%", marginTop: 16 }} minimumValue={2} maximumValue={9} step={1} onValueChange={(value) => handleAxisChange(String(value))} />
-                        <Text style={[styles.formLabel, { color: "green", width: "5%" }]}>9</Text>
+            <ScrollView>
+                <View style={styles.container}>
+                    <View>
+                        <Dropdown
+                            label="Tipo do Frete"
+                            data={freigthTypes}
+                            onChangeText={(value) => handleFreightTypeChange(value)} />
+                        <Dropdown
+                            label="Tipo da Carga"
+                            data={loadTypes}
+                            onChangeText={(value) => handleLoadTypeChange(value)} />
+                        <Text style={styles.formLabel}>Quantidade de Eixos ({selectedAxisQuantity} eixos)</Text>
+                        <View style={{ flexDirection: "row", alignItems: "center" }}>
+                            <Text style={[styles.formLabel, { color: "green", width: "5%" }]}>2</Text>
+                            <Slider style={{ width: "90%", marginTop: 16 }} minimumValue={2} maximumValue={9} step={1} onValueChange={(value) => handleAxisChange(String(value))} />
+                            <Text style={[styles.formLabel, { color: "green", width: "5%" }]}>9</Text>
+                        </View>
+                        <TextInput
+                            style={{ marginTop: 16 }}
+                            label='Distância (km)'
+                            value={distance}
+                            mode="outlined"
+                            onChangeText={text => setDistance(text)}
+                        />
+                        <Button style={styles.button} compact={true} mode="contained" onPress={() => calculateTruckage()}>
+                            Calcular
+                        </Button>
                     </View>
-                    <TextInput
-                        style={{ marginTop: 16 }}
-                        label='Distância (km)'
-                        value={distance}
-                        mode="outlined"
-                        onChangeText={text => setDistance(text)}
-                    />
-                    <Button style={styles.button} compact={true} mode="contained" onPress={() => calculateTruckage()}>
-                        Calcular
-                    </Button>
                 </View>
-            </View>
+            </ScrollView>
         </SafeAreaView>
     );
 };

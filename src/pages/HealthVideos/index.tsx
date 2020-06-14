@@ -6,6 +6,7 @@ import { Appbar } from 'react-native-paper';
 import { useNavigation } from "@react-navigation/native";
 
 import styles from './styles';
+import { ScrollView } from "react-native-gesture-handler";
 
 interface HealthVideo {
     name: string;
@@ -36,35 +37,37 @@ const HealthVideos = () => {
                 <Appbar.Content title="Vídeos" />
             </Appbar.Header>
 
-            <View style={styles.container}>
-                <Text style={styles.title}>Cada visualização de vídeo vale 50 Chapa Pontos!</Text>
+            <ScrollView>
+                <View style={styles.container}>
+                    <Text style={styles.title}>Cada visualização de vídeo vale <Text style={styles.boldText}>50 Chapa Pontos</Text>!</Text>
 
-                {videos.map(video => (
-                    <View key={video.name} style={styles.videoContainer}>
-                        <View style={styles.cardTitleContent}>
-                            <Text style={styles.titleText}>{video.name}</Text>
-                            {video.watched && 
-                                <>
-                                    <Text style={styles.watched}>
-                                        Assistido 
-                                    </Text>
-                                    <MaterialIcons name="done-all" style={styles.icon} size={12} />
-                                </>
-                            }
+                    {videos.map(video => (
+                        <View key={video.name} style={styles.videoContainer}>
+                            <View style={styles.cardTitleContent}>
+                                <Text style={styles.titleText}>{video.name}</Text>
+                                {video.watched && 
+                                    <>
+                                        <Text style={styles.watched}>
+                                            Assistido 
+                                        </Text>
+                                        <MaterialIcons name="done-all" style={styles.icon} size={12} />
+                                    </>
+                                }
+                            </View>
+                            <Video
+                                source={{ uri: video.uri }}
+                                rate={1.0}
+                                volume={1.0}
+                                isMuted={false}
+                                resizeMode="cover"
+                                useNativeControls
+                                style={{ height: 200 }}
+                            />
                         </View>
-                        <Video
-                            source={{ uri: video.uri }}
-                            rate={1.0}
-                            volume={1.0}
-                            isMuted={false}
-                            resizeMode="cover"
-                            useNativeControls
-                            style={{ height: 200 }}
-                        />
-                    </View>
-                ))}
-                
-            </View>
+                    ))}
+                    
+                </View>
+            </ScrollView>
         </>
     );
 };

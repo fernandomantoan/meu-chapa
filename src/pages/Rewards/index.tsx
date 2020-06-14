@@ -19,11 +19,11 @@ const Rewards = () => {
         <>
             <Appbar.Header>
                 <Appbar.BackAction onPress={() => { navigation.goBack() }} />
-                <Appbar.Content title="Telefones Úteis" />
+                <Appbar.Content title="Recompensas" />
             </Appbar.Header>
             <ScrollView>
                 <View style={styles.container}>
-                    <Text style={styles.title}>Antônio, você possui 2500 Chapa Pontos</Text>
+                    <Text style={styles.title}>Antônio, você possui <Text style={styles.boldText}>500 Chapa Pontos</Text></Text>
                     <TextInput
                         mode="outlined"
                         label='Buscar'
@@ -45,7 +45,6 @@ const Rewards = () => {
                                     <Button
                                         dark={true}
                                         mode="contained"
-                                        dark={true}
                                         color={colors.accent}
                                         onPress={() => { handleNavigateToDetail(reward.id) }}>COMPRAR</Button>
                                 </View>

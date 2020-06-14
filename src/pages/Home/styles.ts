@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         flexWrap: 'wrap',
         alignItems: 'center',
-        justifyContent: 'center'
+        justifyContent: 'space-around'
     },
     buttonContainer: {
         shadowColor: 'rgba(0,0,0, .4)', // IOS
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         elevation: 2, // Android
         height: 110,
         width: 110,
-        margin: 20,
+        margin: 15,
         justifyContent: 'center',
         alignItems: 'center',
         flexDirection: 'row',
@@ -40,7 +40,8 @@ const styles = StyleSheet.create({
     },
     text: {
         color: '#868686',
-        marginTop: 10
+        marginTop: 10,
+        textAlign: 'center'
     },
     username: {
         color: '#FFFFFF',

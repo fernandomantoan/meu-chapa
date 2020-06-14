@@ -45,6 +45,9 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         alignItems: 'flex-start',
         padding: 10
+    },
+    boldText: {
+        fontWeight: 'bold'
     }
 });
 
