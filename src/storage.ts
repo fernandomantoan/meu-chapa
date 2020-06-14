@@ -45,3 +45,13 @@ export const rewards = [{
     points: 3000,
     image: require('../assets/Combustivel.png')
 }] as Reward[];
+
+export const services = [{
+    id: 1,
+    name: 'Alimentação',
+    icon: 'silverware-fork-knife'
+}, {
+    id: 2,
+    name: 'Banheiro',
+    icon: 'toilet'
+}];

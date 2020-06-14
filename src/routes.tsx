@@ -8,6 +8,7 @@ import Health from "./pages/Health";
 import HealthVideos from "./pages/HealthVideos";
 import Phones from "./pages/Phones";
 import PointDetail from "./pages/PointDetail";
+import PointForm from "./pages/PointForm";
 import PointsMap from "./pages/PointsMap";
 import RewardBuy from "./pages/RewardBuy";
 import Rewards from "./pages/Rewards";
@@ -32,6 +33,7 @@ const Routes = () => {
                 <AppStack.Screen name="HealthVideos" component={HealthVideos} />
                 <AppStack.Screen name="Phones" component={Phones} />
                 <AppStack.Screen name="PointDetail" component={PointDetail} />
+                <AppStack.Screen name="PointForm" component={PointForm} />
                 <AppStack.Screen name="PointsMap" component={PointsMap} />
                 <AppStack.Screen name="RewardBuy" component={RewardBuy} />
                 <AppStack.Screen name="Rewards" component={Rewards} />
