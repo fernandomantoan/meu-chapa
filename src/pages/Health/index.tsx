@@ -88,15 +88,14 @@ const Health = () => {
                 <List.Section>
                     <List.Subheader>Atividades recentes</List.Subheader>
                     {activities.map((activity => (
-                        <>
+                        <View key={activity.name}>
                             <List.Item
-                                key={activity.name}
                                 title={activity.name}
                                 description={activity.date.toLocaleString()}
                                 right={() => <Text style={styles.listItemPoints}>{activity.points} Chapa Pontos</Text>}
                             />
                             <Divider />
-                        </>
+                        </View>
                     )))}
                 </List.Section>
             </View>
