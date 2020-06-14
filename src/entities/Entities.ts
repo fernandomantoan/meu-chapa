@@ -5,3 +5,11 @@ export interface InterestPoint {
     longitude: number;
     type: string;
 };
+
+export interface Reward {
+    id: number;
+    name: string;
+    description: string;
+    points: number;
+    image: any;
+}
