@@ -5,25 +5,11 @@ import { useNavigation } from "@react-navigation/native";
 import styles from "./styles";
 import { Linking } from "expo";
 import { ScrollView } from "react-native-gesture-handler";
+import { phones } from "../../storage";
 
 const Phones = () => {
     const navigation = useNavigation();
     const { colors } = useTheme();
-    const phones = [{
-        id: 1,
-        name: "Polícia Rodoviária Federal",
-        phone: "191"
-    },
-    {
-        id: 2,
-        name: "Polícia Rodoviária Estadual (PR)",
-        phone: "198"
-    },
-    {
-        id: 3,
-        name: "CCR RodoNorte",
-        phone: "0800-42-1500"
-    }];
 
     function handlePressPhone(phone: string) {
         const url = `tel:${phone}`
@@ -42,9 +28,9 @@ const Phones = () => {
                 <Appbar.BackAction onPress={() => { navigation.goBack() }} />
                 <Appbar.Content title="Telefones Úteis" />
             </Appbar.Header>
-            <ScrollView>
-                <View style={styles.container}>
-                    <Button onPress={() => { console.log("Buscar localização"); }} dark={true} icon="crosshairs-gps" color={colors.accent} mode="contained">Buscar Localização Atual</Button>
+            <View style={styles.container}>
+                <Button onPress={() => { console.log("Buscar localização"); }} dark={true} icon="crosshairs-gps" color={colors.accent} mode="contained">Buscar Localização Atual</Button>
+                <ScrollView>
                     {phones.map((phone) => (
                         <View key={String(phone.id)}>
                             <List.Item onPress={() => { handlePressPhone(phone.phone) }}
@@ -54,8 +40,8 @@ const Phones = () => {
                             <Divider />
                         </View>
                     ))}
-                </View>
-            </ScrollView>
+                </ScrollView>
+            </View>
         </>
     );
 };
