@@ -35,7 +35,7 @@ export default function App() {
   return (
     <PaperProvider theme={theme}>
       <StatusBar backgroundColor="rgba(0, 0, 0, 0.2)" translucent />
-      <View style={{ backgroundColor: "#1976D2", height: 24 + Constants.statusBarHeight }} />
+      <View style={{ backgroundColor: "#1976D2", height: Constants.statusBarHeight }} />
       <Routes />
     </PaperProvider>
   );
